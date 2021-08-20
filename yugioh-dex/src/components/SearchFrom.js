@@ -1,5 +1,5 @@
 import { Form, Row, Col, Button, Card, ListGroupItem, ListGroup } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./SearchFrom.css";
 
@@ -22,13 +22,11 @@ const getCard = () => {
     .catch((err) => err);
 }
 
-//   useEffect(() => getCard(), []);
-
   return (
     <>
       <br/> 
       <br/>
-      <Col>
+      <Row>
         <Form.Label column lg={2}>
           Monsters, Spells and Traps
         </Form.Label>
@@ -40,7 +38,7 @@ const getCard = () => {
             placeholder="Yugioh Card Name"
           />
         </Col>
-      </Col>
+      </Row>
       <br />
       <Button onClick={getCard} variant="info">Go</Button>
 
