@@ -1,4 +1,4 @@
-import { Form, Row, Col, Button, Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import { Form, Col, Button, Card, ListGroupItem, ListGroup } from "react-bootstrap";
 import React, { useState } from "react";
 import axios from "axios";
 import "./SearchFrom.css";
@@ -26,7 +26,7 @@ const getCard = () => {
     <>
       <br/> 
       <br/>
-      <Row>
+      <Col>
         <Form.Label column lg={2}>
           Monsters, Spells and Traps
         </Form.Label>
@@ -38,7 +38,7 @@ const getCard = () => {
             placeholder="Yugioh Card Name"
           />
         </Col>
-      </Row>
+      </Col>
       <br />
       <Button onClick={getCard} variant="info">Go</Button>
 
