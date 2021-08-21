@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card, CardDeck, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, CardDeck, ListGroup, ListGroupItem } from "react-bootstrap";
 
 function AllCards() {
   const [cardData, setCardData] = useState([]);
@@ -33,12 +33,11 @@ function AllCards() {
     );
   };
 
-//   useEffect(() => {
-//     getCard();
-//   }, []);
+  useEffect(() => {
+    getCard();
+  }, []);
   return (
     <div className="AllCards">
-        <Button onClick={getCard}>Go</Button>
         <CardDeck style={{display: "grid", gridTemplateColumns: "repeat(6, 200px)", gridGap: "2em", justifyItems: "center", justifyContent: "space-evenly"}}>
             {cardData.map(renderCard)}
         </CardDeck>
