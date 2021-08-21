@@ -8,6 +8,7 @@ const Nabvar = () => {
           <Navbar.Brand href="#home">Yugioh-Dex!</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/cards">Cards</Nav.Link>
             <Nav.Link href="https://github.com/Parmvir-S">Github</Nav.Link>
           </Nav>
         </Container>
