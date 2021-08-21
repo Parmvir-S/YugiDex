@@ -1,12 +1,12 @@
 import { Navbar, Nav, Container, Image } from "react-bootstrap";
-import rlogo from "../images/rlogo.jpeg";
+import applogo from "../images/applogo.png";
 
 const Nabvar = () => {
   return (
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Image style={{width: "3.5%", marginRight: "2%"}} src={rlogo} roundedCircle />
+          <Image style={{width: "3.5%", marginRight: "2%"}} src={applogo} roundedCircle />
           <Navbar.Brand href="#home">Yugi-Dex!</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
