@@ -7,7 +7,7 @@ const Nabvar = () => {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Image style={{width: "3.5%", marginRight: "2%"}} src={applogo} roundedCircle />
-          <Navbar.Brand href="#home">Yugi-Dex!</Navbar.Brand>
+          <Navbar.Brand href="/">Yugi-Dex!</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/cards">Cards</Nav.Link>
