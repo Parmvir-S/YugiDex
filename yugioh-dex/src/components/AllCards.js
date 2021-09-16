@@ -1,9 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, CardDeck, ListGroup, ListGroupItem } from "react-bootstrap";
+import { slice, concat} from 'lodash';
+import "./AllCards.css";
 
 function AllCards() {
   const [cardData, setCardData] = useState([]);
+  const LIMIT = 10;
+
+  const [showMore, setShowMore] = useState(true);
+  const [list, setList] = useState(slice(cardData, 0, LIMIT));
+  const [index, setIndex] = useState(LIMIT);
+
+  const loadMore = () =>{
+    const newIndex = index + LIMIT;
+    const newShowMore = newIndex < (cardData.length - 1);
+    const newList = concat(list, slice(cardData, index, newIndex));
+    setIndex(newIndex);
+    setList(newList);
+    setShowMore(newShowMore);
+  }
+
 
   const getCard = () => {
     axios
@@ -39,8 +56,9 @@ function AllCards() {
   return (
     <div className="AllCards">
         <CardDeck style={{display: "grid", gridTemplateColumns: "repeat(6, 200px)", gridGap: "2em", justifyItems: "center", justifyContent: "space-evenly"}}>
-            {cardData.map(renderCard)}
+            {list.map(renderCard)}
         </CardDeck>
+        {showMore && <button onClick={loadMore}> More Cards </button>}
     </div>
   );
 }
