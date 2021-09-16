@@ -6,7 +6,7 @@ import "./AllCards.css";
 
 function AllCards() {
   const [cardData, setCardData] = useState([]);
-  const LIMIT = 10;
+  const LIMIT = 12;
 
   const [showMore, setShowMore] = useState(true);
   const [list, setList] = useState(slice(cardData, 0, LIMIT));
